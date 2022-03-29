@@ -121,12 +121,17 @@ const numberReduce = numbers.reduce((accumulator, currentValue) => {
 // Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
 const countriesReduce = () => {
   let country = countries.reduce(
-    (accumulator, currentValue, i, arr) => {
-      `${accumulator}, ${currentValue}`;
+    (accumulator, currentValue) => {
+     if(currentValue){
+       return currentValue;
+      }
+     else {
+       return `and ` + accumulator;
+      }
     });
   return country;
 }
-console.log(countriesReduce);
+console.log(countriesReduce());//INCOMPLETE
 
 // Explain the difference between some and every
 // Use some to check if some names' length greater than seven in names array
