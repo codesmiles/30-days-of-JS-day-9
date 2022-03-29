@@ -74,8 +74,15 @@ const product = products.filter(produce => {
 console.log(product);
 
 // Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
-const getStringLists = (arr) => { }
+const getStringLists = (arr) => {
+
+ }
 // Use reduce to sum all the numbers in the numbers array.
+const numberReduce = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+console.log(numberReduce);
+
 // Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
 // Explain the difference between some and every
 // Use some to check if some names' length greater than seven in names array
