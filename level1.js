@@ -140,15 +140,13 @@ const numberReduce = numbers.reduce((accumulator, currentValue) => {
 const someNamesGreaterThan7 = names.some((name) => {
   return name.length > 7;
 });
-
-console.log(someNamesGreaterThan7);
+// console.log(someNamesGreaterThan7);
 
 // Use every to check if all the countries contain the word land
 const landinCountries = countries.every((country) => {
   return country.includes(`land`);
 });
-
-console.log(landinCountries);
+// console.log(landinCountries);
 
 // Explain the difference between find and findIndex.
 /*find just find: Return the first element which satisfies the condition 
@@ -156,16 +154,20 @@ while findIndex Return the position(in index form) of the first element which sa
 
 // Use find to find the first country containing only six letters in the countries array
 const findFirstCountry = countries.find(country => { return country.length === 6 })
-console.log(findFirstCountry);
+// console.log(findFirstCountry);
 
 // Use findIndex to find the position of the first country containing only six letters in the countries array
 const findPositionOfFirstCountry = countries.findIndex(country => {
   return country.length === 6;
 })
-
-console.log(findPositionOfFirstCountry);
+// console.log(findPositionOfFirstCountry);
 
 // Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-const findPositionOfNorway
+const findPositionOfNorway = countries.findIndex(country => { return country.includes(`Norway`) })
+// console.log(findPositionOfNorway)
 
 // Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const findPositionOfRussia = countries.findIndex((country) => {
+  return country.includes(`Russia`);
+});
+// console.log(findPositionOfRussia);
