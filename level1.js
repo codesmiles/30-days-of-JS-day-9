@@ -134,9 +134,22 @@ const numberReduce = numbers.reduce((accumulator, currentValue) => {
 // console.log(countriesReduce());//INCOMPLETE
 
 // Explain the difference between some and every
+// every returns boolean value if ever element in the array meet the condition while some does the same but for if some values meet the conditions
 
 // Use some to check if some names' length greater than seven in names array
+const someNamesGreaterThan7 = names.some((name) => {
+ return name.length > 7
+})
+
+console.log(someNamesGreaterThan7);
+
 // Use every to check if all the countries contain the word land
+const landinCountries = countries.every((country) => {
+  return country.includes(`land`)
+})
+
+console.log(landinCountries);
+
 // Explain the difference between find and findIndex.
 // Use find to find the first country containing only six letters in the countries array
 // Use findIndex to find the position of the first country containing only six letters in the countries array
