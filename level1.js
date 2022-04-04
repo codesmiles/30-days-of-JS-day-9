@@ -37,9 +37,9 @@ const eachName = () => {
 
 // Use forEach to console.log each number in the numbers array.
 const memberslog = numbers.forEach((number) => {
-  console.log(number);
+  return number;
 });
-// memberslog;
+// console.log(memberslog);
 
 // Use map to create a new array by changing each country to uppercase in the countries array.
 const uppercaseCountries = countries.map((country) => {
@@ -153,17 +153,21 @@ const landinCountries = countries.every((country) => {
 while findIndex Return the position(in index form) of the first element which satisfies the condition*/
 
 // Use find to find the first country containing only six letters in the countries array
-const findFirstCountry = countries.find(country => { return country.length === 6 })
+const findFirstCountry = countries.find((country) => {
+  return country.length === 6;
+});
 // console.log(findFirstCountry);
 
 // Use findIndex to find the position of the first country containing only six letters in the countries array
-const findPositionOfFirstCountry = countries.findIndex(country => {
+const findPositionOfFirstCountry = countries.findIndex((country) => {
   return country.length === 6;
-})
+});
 // console.log(findPositionOfFirstCountry);
 
 // Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-const findPositionOfNorway = countries.findIndex(country => { return country.includes(`Norway`) })
+const findPositionOfNorway = countries.findIndex((country) => {
+  return country.includes(`Norway`);
+});
 // console.log(findPositionOfNorway)
 
 // Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
@@ -171,3 +175,30 @@ const findPositionOfRussia = countries.findIndex((country) => {
   return country.includes(`Russia`);
 });
 // console.log(findPositionOfRussia);
+
+// Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+const totalprice = products
+  .map((product) => {
+    return product.price;
+  })
+  .filter((price) => {
+    return typeof price === `number`;
+  })
+  .reduce((prev, curr) => {
+    return prev + curr;
+  }, 0);
+// console.log(totalprice);
+
+// Find the sum of price of products using only reduce reduce(callback))
+const priceSum = products.reduce((previousValue, currentValue) => {
+  if ( typeof currentValue.price === `number` ) {
+    return previousValue + currentValue.price;
+  }
+},0);
+console.log(priceSum);
+
+// Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+// Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+// Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+// Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
