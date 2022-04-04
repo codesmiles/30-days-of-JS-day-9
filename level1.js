@@ -190,12 +190,16 @@ const totalprice = products
 // console.log(totalprice);
 
 // Find the sum of price of products using only reduce reduce(callback))
-const priceSum = products.reduce((previousValue, currentValue) => {
-  if ( typeof currentValue.price === `number` ) {
-    return previousValue + currentValue.price;
-  }
-},0);
-console.log(priceSum);
+
+const newArray = 0;
+// for (i = 0; i < products.length; i++) {
+//   typeof products[i].price === `number`
+//     ? newArray.push(products[i].price)
+//     : false;
+// }
+
+
+console.log(newTotal);
 
 // Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
 // Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
