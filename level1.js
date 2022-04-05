@@ -189,19 +189,37 @@ const totalprice = products
   }, 0);
 // console.log(totalprice);
 
+
+
+// const products = [
+//   { product: "banana", price: 3 },
+//   { product: "mango", price: 6 },
+//   { product: "potato", price: " " },
+//   { product: "avocado", price: 8 },
+//   { product: "coffee", price: 10 },
+//   { product: "tea", price: "" },
+// ];
+
 // Find the sum of price of products using only reduce reduce(callback))
+const epicArr = [];
 
-const newArray = 0;
-// for (i = 0; i < products.length; i++) {
-//   typeof products[i].price === `number`
-//     ? newArray.push(products[i].price)
-//     : false;
-// }
+const addObj = products.reduce((prev, curr) => {
+  if (typeof (curr.price) === `number`) {
+    return epicArr.push(curr.price);
+  }
+
+}, 0);
+const total = epicArr.reduce((prev, curr) => {
+  return prev + curr;
+},0);
+
+console.log(total);
 
 
-console.log(newTotal);
 
 // Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+
+
 // Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 // Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 // Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
