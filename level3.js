@@ -83,7 +83,7 @@ const statistics = {
       }
      
   },
-  mode() {
+  mode: function() {
     const highNumber = Math.max(...ages);
     const mode = ages.filter(age => age === highNumber).length;
     return `mode: ${highNumber} count: ${mode}`;
