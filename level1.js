@@ -187,7 +187,7 @@ const totalprice = products
   .reduce((prev, curr) => {
     return prev + curr;
   }, 0);
-// console.log(totalprice);
+console.log(totalprice);
 
 
 

@@ -50,16 +50,56 @@
 // ```
 // *** Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
 
-// const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+const ages = [
+  31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37,
+  31, 34, 24, 33, 29, 26,
+];
 
-// console.log('Count:', statistics.count()) // 25
-// console.log('Sum: ', statistics.sum()) // 744
-// console.log('Min: ', statistics.min()) // 24
-// console.log('Max: ', statistics.max()) // 38
-// console.log('Range: ', statistics.range() // 14
-// console.log('Mean: ', statistics.mean()) // 30
-// console.log('Median: ',statistics.median()) // 29
-// console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+const statistics = {
+  count() {
+    return ages.length;
+  },
+    sum() {
+       return (ages.reduce((acc, norm) => { return acc + norm;}, 0));
+    },
+    min: function () {
+        return (Math.min(...ages));
+    },
+    max() {
+        return Math.max(...ages);
+    },
+    range: function (){
+        return this.max() - this.min();
+    },
+    mean() {
+        return Math.round(this.sum() / this.count());
+    },
+    median() {
+      if (this.count() % 2 === 0) {
+        return Math.round((ages[this.count() / 2 - 1] + ages[this.count() / 2]) / 2);
+      }
+      else {
+        return Math.round(ages[(this.count() - 1) / 2]);
+      }
+     
+  },
+  mode() {
+    const highNumber = Math.max(...ages);
+    const mode = ages.filter(age => age === highNumber).length;
+    return `mode: ${highNumber} count: ${mode}`;
+    }
+    
+  
+};
+
+console.log("Count:", statistics.count()); // 25
+console.log("Sum: ", statistics.sum()); // 744
+console.log('Min: ', statistics.min()) // 24
+console.log('Max: ', statistics.max()) // 38
+console.log('Range:', statistics.range()) // 14
+console.log('Mean: ', statistics.mean()) // 30
+console.log('Median:',statistics.median()) // 29
+console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
 // console.log('Variance: ',statistics.var()) // 17.5
 // console.log('Standard Deviation: ', statistics.std()) // 4.2
 // console.log('Variance: ',statistics.var()) // 17.5
