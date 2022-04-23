@@ -116,3 +116,32 @@ console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
 // Variance:  17.5
 // Standard Deviation:  4.2
 // Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+
+
+class Shop{
+  constructor(shopName, location) {
+    this.shopName = shopName;
+    this.location = location;
+  }
+  #shopItems = [];
+  // show all the shop items array value
+  getProducts() {
+    return this.#shopItems;
+  }
+// add to the shop item array
+  addProduct(val) {
+    this.#shopItems.push(val)
+    return this;
+  }
+// delete from the shop items value array
+  removeLastProduct() {
+    this.#shopItems.pop();
+    return this;
+  }
+
+};
+let user1 = new Shop(`shoprite`, `egbeda`);
+
+console.log(user1.addProduct(`rice`).addProduct(`beans`).getProducts());
+
+
